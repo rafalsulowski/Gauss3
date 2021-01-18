@@ -10,7 +10,9 @@ int eliminate(int n, double **AB)
   double m;
 
   // eliminacja współczynników
-
+	// Moja wersja jest juz zrobiona
+	//
+	//
   for (i = 0; i < n - 1; i++)
   {
     for (j = i + 1; j < n; j++)
