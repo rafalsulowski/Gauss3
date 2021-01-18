@@ -3,6 +3,7 @@
 
 #include "mat_io.h"
 #include <stdbool.h>
+#include <stdio.h>
 #include <math.h>
 
 /**
