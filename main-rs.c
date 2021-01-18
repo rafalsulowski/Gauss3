@@ -20,18 +20,6 @@ int main(int argc, char **argv)
 	int file = 1;
 	for (int trial = 0; trial < 5; trial++)
 	{
-
-		// if (trial == 4)
-		// {
-		// 	printf("Przyklad %d\n", trial + 1);
-		// 	printf("Do macierzy A wczytuje dane z pliku: %s\n", argv[file]);
-		// 	printf("Do macierzy b wczytuje dane z pliku: %s\n", argv[file]);
-
-		// 	printf("Zly format plikow!\n");
-		// 	printf("Koniec przykladu %d\n\n\n", trial + 1);
-		// 	break;
-		// }
-
 		printf("Przyklad %d\n", trial + 1);
 		printf("Do macierzy A wczytuje dane z pliku: %s\n", argv[file]);
 		A = readFromFile(argv[file++]);
