@@ -8,6 +8,7 @@
  */
 Matrix *readFromFile(char *fname)
 {
+	double temp;
 	int r, c;
 	int ir, ic;
 	FILE *fin = fopen(fname, "r");
@@ -21,7 +22,15 @@ Matrix *readFromFile(char *fname)
 		{
 			for (ir = 0; ir < r; ir++)
 				for (ic = 0; ic < c; ic++)
-					fscanf(fin, "%lf", &(mat->data[ir][ic]));
+				{
+					if (fscanf(fin, "%lf", &temp) != 1)
+					{
+						fprintf(stderr, "Zly typ danych w pliku z danymi!\n");
+						return NULL;
+					}
+					else
+						mat->data[ir][ic] = temp;
+				}
 		}
 		else
 		{

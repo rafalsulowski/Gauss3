@@ -14,7 +14,6 @@ int main(int argc, char **argv)
 	int solution_tab[5] = {0};
 	double SOL1[4] = {-1., 1., -1., 1.};
 	double SOL2[2] = {2., 5.};
-	solution_tab[4] = 1;
 	double SOL3[3] = {0.5, 1.5, 0.5};
 
 	//zmienna oznaczająca numer pliku
@@ -22,16 +21,16 @@ int main(int argc, char **argv)
 	for (int trial = 0; trial < 5; trial++)
 	{
 
-		if (trial == 4)
-		{
-			printf("Przyklad %d\n", trial + 1);
-			printf("Do macierzy A wczytuje dane z pliku: %s\n", argv[file]);
-			printf("Do macierzy b wczytuje dane z pliku: %s\n", argv[file]);
+		// if (trial == 4)
+		// {
+		// 	printf("Przyklad %d\n", trial + 1);
+		// 	printf("Do macierzy A wczytuje dane z pliku: %s\n", argv[file]);
+		// 	printf("Do macierzy b wczytuje dane z pliku: %s\n", argv[file]);
 
-			printf("Zly format plikow!\n");
-			printf("Koniec przykladu %d\n\n\n", trial + 1);
-			break;
-		}
+		// 	printf("Zly format plikow!\n");
+		// 	printf("Koniec przykladu %d\n\n\n", trial + 1);
+		// 	break;
+		// }
 
 		printf("Przyklad %d\n", trial + 1);
 		printf("Do macierzy A wczytuje dane z pliku: %s\n", argv[file]);
@@ -40,7 +39,11 @@ int main(int argc, char **argv)
 		b = readFromFile(argv[file++]);
 
 		if (A == NULL)
+		{
+			if (trial == 4)
+				solution_tab[trial] = 1;
 			break;
+		}
 		if (b == NULL)
 			break;
 
@@ -154,6 +157,7 @@ int main(int argc, char **argv)
 	}
 
 	//pokazuje czy test zostal zdany czy nie
+	printf("\n\n");
 	for (int i = 0; i < 5; i++)
 	{
 		if (solution_tab[i] == 1)
