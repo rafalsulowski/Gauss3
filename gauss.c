@@ -7,7 +7,6 @@ int eliminate(int n, double **AB)
 {
   int i, j, k;
   double m, tmp;
-
   // Metoda eliminacju gaussa
   // eliminacja współczynników
 
@@ -39,7 +38,7 @@ int eliminate(int n, double **AB)
     // Elimination of variables
     for (i = k + 1; i < n; i++)
     {
-      double m = AB[i][k] / AB[k][k];
+      m = AB[i][k] / AB[k][k];
       for (j = k; j < n + 1; j++)
         AB[i][j] -= m * AB[k][j];
     }
